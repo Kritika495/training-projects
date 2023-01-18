@@ -1,0 +1,39 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Alexa",
+      "email": "alexa@amazon.com",
+      "phone": "9876543212",
+      "picture": "alexa.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Siri",
+      "email": "siri@apple.com",
+      "phone": "9876543212",
+      "picture": "alexa.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Alex",
+      "email": "alex@amazon.com",
+      "phone": "9776543212",
+      "picture": "alexa.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Rose",
+      "email": "rose@amazon.com",
+      "phone": "7876543212",
+      "picture": "alexa.jpg"
+    },
+    {
+      "name": "kritika",
+      "email": "kritika.kashyap@happiestminds.com",
+      "phone": "7654449876",
+      "picture": "2.jpg",
+      "id": 5
+    }
+  ]
+}
