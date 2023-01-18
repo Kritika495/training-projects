@@ -1,0 +1,16 @@
+<h3>Employees Details</h3>
+<hr/>
+<div class="table table-hover">
+  <div *ngFor="let e of emps; index as i">
+   <div class="row">
+     <div class="col-sm-3">{{e.ecode}}</div>
+     <div class="col-sm-3">{{e.ename}}</div>
+     <div class="col-sm-3">{{e.salary}}</div>
+    <div class="col-sm-2">{{e.deptid}}</div>
+    <div class="col">
+        <button (click)="deleteEmp(i)" class="btn btn-danger">Delete</button>
+    </div>
+   </div>
+
+  </div>
+</div>

@@ -1,0 +1,14 @@
+
+ <div *ngIf="contact" class="row">
+      <div class="col-sm-4">
+        <img src="../../assets/images/img{{contact.id}}.webp" style="height: 150px;"/>
+      </div>
+
+      <div class="col-sm-8">
+        <h4 [routerLink]="['/edit-contact']" style="cursor:pointer"> {{contact.firstname | title: contact.gender}} {{contact.lastname}}</h4>
+        <p>{{contact.city}} {{contact.state}}</p>
+        <p>{{contact.phone}}</p>
+        <button [routerLink]="['/edit-contact', contact.id]" class="btn btn-success">Edit</button>  &nbsp;
+         <button class="btn btn-danger" (click)="deleteContact(contact.id)">Delete</button> &nbsp;
+      </div>
+    </div> 

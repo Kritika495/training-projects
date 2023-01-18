@@ -1,0 +1,199 @@
+<h3>Add contact details</h3>
+<form #f1="ngForm"  class="form">
+   {{f1.invalid}}
+   <div class="row form-group">
+     <div class="col">
+        <label for="firstname">First Name</label> 
+     </div>
+     
+     <div class="col">
+        <input #firstname="ngModel" type="text" class="form-control" name="firstname" minlength="5" maxlength="10" [(ngModel)]="contact.firstname" required/> 
+     </div>
+     <div *ngIf="firstname.invalid && firstname.dirty" class="err">
+      <div *ngIf="firstname.errors?.['required']">
+       First name is required;
+      </div>
+      <div *ngIf="firstname.errors?.['minlength']">
+       Please enter atleast 3 letters for firstname.
+      </div >
+      <div *ngIf="firstname.errors?.['maxlength']">Please enter atmost 10 letters for firstname.</div>
+      </div>
+     </div>
+     
+   
+  
+
+   <div class="row form-group">
+    <div class="col">
+       <label for="lastname">Last Name</label> 
+    </div>
+    
+    <div class="col">
+       <input #lastname="ngModel" type="text" class="form-control" name="lastname" minlength="5" maxlength="10" [(ngModel)] = "contact.lastname" required/> 
+    </div>
+    
+
+    <div *ngIf="lastname.invalid && lastname.dirty" class="err">
+      <div *ngIf="lastname.errors?.['required']">
+       Last name is required;
+      </div>
+      <div *ngIf="lastname.errors?.['minlength']">
+       Please enter atleast 3 letters for Lastname.
+      </div >
+      <div *ngIf="lastname.errors?.['maxlength']">Please enter atmost 10 letters for Lastname.</div>
+   </div>
+
+  </div>
+  
+ 
+
+
+  <div class="row form-group">
+    <div class="col">
+       <label for="gender">Gender</label> 
+    </div>
+    
+    <div class="col">
+       <input #gender="ngModel" type="radio" name="gender" [(ngModel)] = "contact.gender" value="Male" required/> Male
+       <input #gender="ngModel" type="radio" name="gender" [(ngModel)] = "contact.gender" value="Female"  required/> Female
+    </div>
+    
+     <div *ngIf="gender.invalid && gender.dirty" class="err">
+         <div *ngIf="gender.errors?.['required']">
+               Selecting gender is required.
+         </div>
+     </div>
+
+  </div>
+
+
+  
+ 
+
+
+  <div class="row form-group">
+    <div class="col">
+       <label for="dob">Date Of Birth</label> 
+    </div>
+    
+    <div class="col">
+       <input #dob="ngModel" type="text" class="form-control" name="dob" [(ngModel)] = "contact.dob" required/> 
+    </div>
+    
+    <div *ngIf="dob.invalid && dob.dirty" class="err">
+      <div *ngIf="dob.errors?.['required']">
+          Date of birth is required.
+      </div>
+  </div>
+
+  </div>
+
+
+  <div class="row form-group">
+    <div class="col">
+       <label for="dob">Email id</label> 
+    </div>
+    
+    <div class="col">
+       <input #email="ngModel" type="text" class="form-control" name="email"  [(ngModel)] = "contact.email" required/> 
+    </div>
+    
+    <div *ngIf="email.invalid && email.dirty" class="err">
+      <div *ngIf="email.errors?.['required']">
+            Enter a valid email.
+      </div>
+  </div>
+
+  </div>
+
+
+
+  <div class="row form-group">
+    <div class="col">
+       <label for="phone">Phone</label> 
+    </div>
+    
+    <div class="col">
+       <input #phone="ngModel" type="text" class="form-control" name="phone" pattern="\d{10,10}" [(ngModel)] = "contact.phone" required/> 
+    </div>
+    <div *ngIf="phone.invalid && phone.dirty" class="err">
+      <div *ngIf="phone.errors?.['required']">
+            Enter valid phone number
+      </div>
+  </div>
+</div>
+
+<div class="row form-group">
+    <div class="col">
+       <label for="city">City</label> 
+    </div>
+    
+    <div class="col">
+       <input #city="ngModel" type="text" class="form-control" name="city"  [(ngModel)] = "contact.city" required/> 
+    </div>
+    
+    <div *ngIf="city.invalid && city.dirty" class="err">
+      <div *ngIf="city.errors?.['required']">
+            Enter your city name.
+      </div>
+  </div>
+
+</div>
+
+<div class="row form-group">
+    <div class="col">
+       <label for="state">State</label> 
+    </div>
+    
+    <div class="col">
+       <input #state="ngModel" type="text" class="form-control" name="state" [(ngModel)] = "contact.state" required/> 
+    </div>
+    
+    <div *ngIf="state.invalid && state.dirty" class="err">
+      <div *ngIf="state.errors?.['required']">
+            Enter your state name.
+      </div>
+  </div>
+
+</div>
+
+
+<div class="row form-group">
+    <div class="col">
+       <label for="country">Country</label> 
+    </div>
+    
+    <div class="col">
+       <input #country="ngModel" type="text" class="form-control" name="country" minlength="5" maxlength="10" [(ngModel)] = "contact.country" required/> 
+    </div>
+    <div *ngIf="country.invalid && country.dirty" class="err">
+      <div *ngIf="country.errors?.['required']">
+            Enter your country name.
+      </div>
+  </div>
+</div>
+
+<div class="row form-group">
+    <div class="col">
+       <label for="picture">Picture</label> 
+    </div>
+    
+    <div class="col">
+       <input #picture="ngModel" type="text" class="form-control" name="picture" [(ngModel)] = "contact.picture" required/> 
+    </div>
+    <div *ngIf="picture.invalid && picture.dirty" class="err">
+      <div *ngIf="picture.errors?.['required']">
+            Selecting gender is required.
+      </div>
+  </div>
+</div>
+
+
+
+
+<div class="row form-group">
+    <div class="col">
+        <button (click)="addContact()" [disabled]="f1.invalid" class="btn btn-{{f1.invalid?'danger':'success'}}" >Add Contact</button>
+    </div>
+</div>
+</form>

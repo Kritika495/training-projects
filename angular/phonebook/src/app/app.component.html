@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="row alert alert-info">
+    <div class="col"></div>
+    <h2>Phone Book Application</h2>
+    <p>Powered by angular</p>
+    <hr/>
+    </div>
+  
+
+
+<div class="row">
+  <div class="col-sm-4 alert alert-warning full-height">
+   <p>
+    <button [routerLink]="['/contact-list']" class="btn btn-secondary " style="width: 100%">
+     Contact List
+    </button>
+   </p>
+   <p>
+    <button  [routerLink]="['/home']" class="btn btn-secondary " style="width: 100%">
+      Home
+     </button>
+</p>
+<p>
+     <button [routerLink]="['/add-contact']" class="btn btn-secondary " style="width: 100%">
+      Add new contact
+     </button>
+
+   </p>
+  </div>
+  <div class="col-sm-8">
+  <!--<contact-details></contact-details>-->
+  <!--<contact-list></contact-list>-->
+  <!--<add-contact></add-contact>-->
+  <!--<edit-contact></edit-contact>-->
+  <router-outlet></router-outlet>
+  </div>
+
+  
+</div>

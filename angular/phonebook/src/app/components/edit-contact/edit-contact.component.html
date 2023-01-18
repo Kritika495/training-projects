@@ -1,0 +1,203 @@
+
+<h3>Edit contact form</h3>
+<form *ngIf="editform" [formGroup]="editform" (ngSubmit) ="saveContact(editform.value)"  class="form">
+   <div class="row form-group">
+     <div class="col">
+        <label for="firstname">First Name</label> 
+     </div>
+     
+     <div class="col">
+        <input formControlName="firstname" type="text"  class="form-control"/> 
+     </div>
+     </div>
+
+     <div *ngIf="editform.controls['firstname']" class="err">
+     <div *ngIf="editform.controls['firstname'].errors?.['required']">
+      First name is required;
+     </div>
+     <div *ngIf="editform.controls['firstname'].errors?.['minlength']">
+      Please enter atleast 3 letters for firstname.
+     </div >
+     <div *ngIf="editform.controls['firstname'].errors?.['maxlength']">Please enter atmost 10 letters for firstname.</div>
+     </div>
+   
+  
+
+   <div class="row form-group">
+    <div class="col">
+       <label for="lastname">Last Name</label> 
+    </div>
+    
+    <div class="col">
+       <input formControlName="lastname" type="text" class="form-control"/> 
+    </div>
+    
+  </div>
+  <div *ngIf="editform.controls['lastname'].invalid && editform.controls['lastname'].dirty" class="err">
+   <div *ngIf="editform.controls['lastname'].errors?.['required']">
+    Last name is required;
+   </div>
+   <div *ngIf="editform.controls['lastname'].errors?.['minlength']">
+    Please enter atleast 3 letters for Lastname.
+   </div >
+   <div *ngIf="editform.controls['lastname'].errors?.['maxlength']">Please enter atmost 10 letters for Lastname.</div>
+</div>
+ 
+
+
+  <div class="row form-group">
+    <div class="col">
+       <label for="gender">Gender</label> 
+    </div>
+    
+    <div class="col">
+       <input formControlName="gender" type="radio"  value="Male" /> Male
+       <input formControlName="gender" type="radio"  value="Female" /> Female
+    </div>
+    
+  </div>
+
+
+  <div *ngIf="editform.controls['gender'].invalid && editform.controls['gender'].dirty" class="err">
+    <div *ngIf="editform.controls['gender'].errors?.['required']">
+      Please enter gender
+    </div>
+    
+ </div>
+ 
+
+
+  <div class="row form-group">
+    <div class="col">
+       <label for="dob">Date Of Birth</label> 
+    </div>
+    
+    <div class="col">
+       <input formControlName="dob" type="text" class="form-control"/> 
+    </div>
+    
+  </div>
+
+  <div *ngIf="editform.controls['dob'].invalid && editform.controls['dob'].dirty" class="err">
+   <div *ngIf="editform.controls['dob'].errors?.['required']">
+     DOB is required.
+   </div>
+   
+</div>
+
+
+  <div class="row form-group">
+    <div class="col">
+       <label for="email">Email id</label> 
+    </div>
+    
+    <div class="col">
+       <input formControlName="email" type="text" class="form-control" /> 
+    </div>
+    
+  </div>
+  <div *ngIf="editform.controls['email'].invalid && editform.controls['email'].dirty"  class="err">
+    <div *ngIf="editform.controls['lastname'].errors?.['required']">
+     Email is required;
+    </div>
+    
+    <div *ngIf="editform.controls['lastname'].errors?.['maxlength']">Please enter atmost 10 letters for Lastname.</div>
+ </div>
+
+  <div class="row form-group">
+    <div class="col">
+       <label for="phone">Phone</label> 
+    </div>
+    
+    <div class="col">
+       <input formControlName="phone" type="text" class="form-control" name="phone" pattern="\d{10,10}"/> 
+    </div>
+    
+</div>
+
+<div *ngIf="editform.controls['phone'].invalid && editform.controls['phone'].dirty" class="err">
+   <div *ngIf="editform.controls['phone'].errors?.['required']">
+     Please enter gender
+   </div>
+   
+</div>
+
+<div class="row form-group">
+    <div class="col">
+       <label for="city">City</label> 
+    </div>
+    
+    <div class="col">
+       <input formControlName="city" type="text" class="form-control"/> 
+    </div>
+    
+</div>
+
+<div *ngIf="editform.controls['city'].invalid && editform.controls['city'].dirty" class="err">
+   <div *ngIf="editform.controls['city'].errors?.['required']">
+     City is required.
+   </div>
+   
+</div>
+
+<div class="row form-group">
+    <div class="col">
+       <label for="city">State</label> 
+    </div>
+    
+    <div class="col">
+       <input formControlName="state" type="text" class="form-control" /> 
+    </div>
+    
+</div>
+
+<div *ngIf="editform.controls['state'].invalid && editform.controls['state'].dirty" class="err">
+   <div *ngIf="editform.controls['state'].errors?.['required']">
+     Please enter state.
+   </div>
+   
+</div>
+
+<div class="row form-group">
+    <div class="col">
+       <label for="city">Country</label> 
+    </div>
+    
+    <div class="col">
+       <input formControlName="country" type="text" class="form-control"/> 
+    </div>
+    
+</div>
+
+<div *ngIf="editform.controls['country'].invalid && editform.controls['country'].dirty" class="err">
+   <div *ngIf="editform.controls['gender'].errors?.['required']">
+     Please enter Country.
+   </div>
+   
+</div>
+
+<div class="row form-group">
+    <div class="col">
+       <label for="city">Picture</label> 
+    </div>
+    
+    <div class="col">
+       <input formControlName="picture" type="text" class="form-control"/> 
+    </div>
+    
+</div>
+
+<div *ngIf="editform.controls['picture'].invalid && editform.controls['picture'].dirty" class="err">
+   <div *ngIf="editform.controls['picture'].errors?.['required']">
+     Please enter the picture.
+   </div>
+   
+</div>
+
+
+<div class="row form-group">
+    <div class="col">
+        <input type="submit"  [formGroup]="editform" class="btn btn-success" value="Save Contact"/>
+    </div>
+</div>
+</form>

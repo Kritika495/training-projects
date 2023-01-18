@@ -1,0 +1,25 @@
+<h3>List of all contacts</h3>
+<hr/>
+<div class="list-group">
+  <!--<h4>All contacts: {{contacts.length}} |&nbsp; Male: {{male()}} |&nbsp; Female: {{female()}}</h4>-->
+  <counter [all]="male()+female()" [male]="male()" [female]="female()"></counter>
+<div *ngFor="let c of contacts" class="list-group-item">
+
+  <contact-item [contact]="c" (onReload)="reload($event)"></contact-item>
+    <!-- <div class="row">
+      <div class="col-sm-4">
+        <img src="../../assets/images/img{{c.id}}.webp" style="height: 150px;"/>
+      </div>
+
+      <div class="col-sm-8">
+        <h4 [routerLink]="['/edit-contact']" style="cursor:pointer"> {{c.firstname | title: c.gender}} {{c.lastname}}</h4>
+        <p>{{c.city}} {{c.state}}</p>
+        <p>{{c.phone}}</p>
+        <button [routerLink]="['/edit-contact', c.id]" class="btn btn-success">Edit</button>  &nbsp;
+        <button class="btn btn-danger" (click)="deleteContact(c.id)">Delete</button> &nbsp;
+      </div>
+    </div> -->
+
+</div>
+
+</div>
